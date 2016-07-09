@@ -11,8 +11,8 @@ $(function() {
     cache: false,
     success: function(data){ // 通信が成功した時
       var sheetsEntry = data.feed.entry; // 実データ部分を取得
-      var arryData = shapeData(sheetsEntry); // JSONデータを連想配列に変換する
-      makeTable(arryData);
+      var arryData = getJsonArray(sheetsEntry); // JSONデータを連想配列に変換する
+      createTableFromArray(arryData);
     },
     error: function(){ // 通信が失敗した時
       alert("取得に失敗しました。");
@@ -22,7 +22,7 @@ $(function() {
 });
 
 // 取得したJSONのデータを連想配列で返す
-function shapeData(jsonData) {
+function getJsonArray(jsonData) {
   var shapeData = [];
   var tmpArr = [];
   var startRow = eval(jsonData[0].gs$cell.row);
@@ -44,7 +44,7 @@ function shapeData(jsonData) {
 }
 
 // 連想配列になったスプレッドシートのデータをテーブルにする
-function makeTable(arryData) {
+function createTableFromArray(arryData) {
   if(Array.isArray(arryData)) {
     var table = $('<table class="table_data">');
     $("#data").append(table);
