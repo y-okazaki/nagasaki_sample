@@ -1,12 +1,12 @@
 $(function() {
   // spredsheetsのkeyとworkedsheetId
-  var my_key = "spredsheetのkey";
-  var my_worksheetId = "spredsheetのworkedsheetId";
-  
+  var myKey = "spredsheetのkey";
+  var myWorksheetId = "spredsheetのworkedsheetId";
+
   // データ取得
   $.ajax({
     type: 'GET',
-    url: 'https://spreadsheets.google.com/feeds/cells/' + my_key + '/' + my_worksheetId +'/public/values?alt=json',
+    url: 'https://spreadsheets.google.com/feeds/cells/' + myKey + '/' + myWorksheetId +'/public/values?alt=json',
     dataType: 'jsonp',
     cache: false,
     success: function(data){ // 通信が成功した時
