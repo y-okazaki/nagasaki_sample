@@ -1,9 +1,8 @@
 $(function() {
   // spredsheetsのkeyとworkedsheetId
   var my_key = "spredsheetのkey";
-  var my_worksheetId = "spredsheetのworkedsheetId"
-  var startDataRow = 2;
-  var startDataColumn = 1;
+  var my_worksheetId = "spredsheetのworkedsheetId";
+  
   // データ取得
   $.ajax({
     type: 'GET',
