@@ -21,7 +21,7 @@ $(function() {
   });
 });
 
-// 取得したJSONのデータを連想配列で返す
+// 取得したJSONのデータのセルのデータのみを配列で返す
 function getJsonArray(jsonData) {
   var shapeData = [];
   var tmpArr = [];
